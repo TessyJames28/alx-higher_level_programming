@@ -1,0 +1,4 @@
+#!/bin/bash
+#import dis
+python3 102-magic_calculation.py
+dis.dis(magic_calculation)
