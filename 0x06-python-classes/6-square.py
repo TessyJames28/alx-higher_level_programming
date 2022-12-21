@@ -35,7 +35,10 @@ class Square:
     """definint the setter to set the value of position"""
     @position.setter
     def position(self, value):
-        if not isinstance(value, tuple) | position < 0:
+        if not (isinstance(value, tuple) or
+                value != 2 or
+                not all(isinstance(num, int) for num in value) or
+                not all(num >= 0 for num in value)):
             raise TypeError("position must be a tuple of 2 positive integers")
 
     """defining a public instance method "area" to return area of a square"""
