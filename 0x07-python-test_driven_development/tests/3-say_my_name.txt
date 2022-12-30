@@ -1,0 +1,69 @@
+TDD for 3-say_my_name module
+============================
+
+check module is present
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+check module docstring
+>>> m = say_my_name = __import__('3-say_my_name').__doc__
+>>> len(m) > 1
+True
+
+check function docstring
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+>>> len(say_my_name.__doc__) > 1
+True
+
+Check for String
+>>> say_my_name("Tessy", "James")
+My name is Tessy James
+
+Check for firstname
+>>> say_my_name("Tessy") #doctest: +ELLIPSIS
+My name is Tessy ...
+
+check for number
+>>> say_my_name(7, 7)
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+check number for firstname
+>>> say_my_name(7, "Walter")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+check number for last name
+>>> say_my_name("John", 7)
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
+
+check for empty string
+>>> say_my_name("", "") #doctest: +ELLIPSIS
+My name is ...
+
+check for dictionary
+>>> say_my_name({"james": 1}, "Walter")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+check for list
+>>> say_my_name("Amaka", ["list"])
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
+
+check for tuple
+>>> say_my_name(("Amaka", "John"), "Walter")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+check for None
+>>> say_my_name(None, "Smith")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
