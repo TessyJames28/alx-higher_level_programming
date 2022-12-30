@@ -1,0 +1,64 @@
+TDD for 4-print_square module
+=============================
+
+check module is present
+>>> print_square = __import__('4-print_square').print_square
+
+check module doctring
+>>> m = print_square = __import__('4-print_square').__doc__
+>>> len(m) > 1
+True
+
+check function doctring
+>>> len(print_square.__doc__) > 1
+True
+
+correct output
+==============
+>>> print_square(4)
+####
+####
+####
+####
+
+>>> print_square(1)
+#
+
+>>> print_square(0)
+<BLANKLINE>
+
+>>> print_square(3.0)
+###
+###
+###
+
+
+Following will raise TypeError:
+==============================
+>>> print_square("four")
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
+>>> print_square([4])
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
+>>> print_square({5: now})
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
+>>> print_square(-1.0)
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
+
+Following will raise ValueError:
+===============================
+>>> print_square(-20)
+Traceback (most recent call last):
+...
+ValueError: size must be >= 0
