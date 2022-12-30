@@ -1,0 +1,56 @@
+TDD for 5-text_indentation module
+=================================
+
+check module presence
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+check module docstring
+>>> m = __import__('5-text_indentation').__doc__
+>>> len(m) > 1
+True
+
+check function docstring
+>>> len(text_indentation.__doc__) > 1
+True
+
+
+Correct output
+==============
+
+>>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing \
+... elit. Quonam modo?""")
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+<BLANKLINE>
+Quonam modo?
+<BLANKLINE>
+
+check for normal string
+>>> text_indentation("Hello: Can I help you?")
+Hello:
+<BLANKLINE>
+Can I help you?
+<BLANKLINE>
+
+Incorrect Output
+================
+
+check for list
+>>> text_indentation(["listen. Now?"])
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+check for number
+>>> text_indentation(7)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+check for dictionary
+>>> text_indentation({"listen": "Now?"})
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+check for empty value
+>>> text_indentation("")
