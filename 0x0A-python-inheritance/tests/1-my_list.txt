@@ -1,0 +1,32 @@
+TDD for class MyList
+====================
+
+check module presence
+>>> MyList = __import__('1-my_list').MyList
+
+check for module doc
+>>> m = __import__('1-my_list').__doc__
+>>> len(m) > 1
+True
+
+check function doc
+>>> MyList = __import__('1-my_list').MyList
+>>> len(MyList.__doc__) > 1
+True
+
+case 1: common case
+===================
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+
+=========================
