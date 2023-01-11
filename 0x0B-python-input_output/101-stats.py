@@ -10,6 +10,7 @@ prints those statistics since the beginning:
     count of read status code up to that point
 """
 
+
 def stat_info(size, status_codes):
     """
     function to print the file size and status code
@@ -22,6 +23,7 @@ def stat_info(size, status_codes):
 
     for key in sorted(status_codes):
         print("{}: {}".format(key, status_codes[key]))
+
 
 size = 0
 count = 0
@@ -44,16 +46,16 @@ try:
         lines = lines.split()
 
         try:
-             stat = int(lines[-2])
+            stat = int(lines[-2])
 
-             if str(stat) in status_codes.keys():
-                 status_codes[str(stat)] += 1
-        except:
+            if str(stat) in status_codes.keys():
+                status_codes[str(stat)] += 1
+        except Exception:
             pass
 
         try:
             size += int(lines[-1])
-        except:
+        except Exception:
             pass
 
         count += 1
