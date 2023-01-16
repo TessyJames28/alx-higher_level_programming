@@ -4,17 +4,18 @@ from models.base import Base
 
 
 class Rectangle(Base):
-    """
-    class Rectangle with private instance attributes with getters/setters
-
-    Attributes:
-        width (int) - width of the rectangle
-        height (int) - height of the rectangle
-        x (int) - must be >= 0
-        y (int) - must be >= 0
-    """
+    """initializing the class Rectangle to inherit from class Base"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """
+        class Rectangle with private instance attributes with getters/setters
+
+        Attributes:
+            width (int) - width of the rectangle
+            height (int) - height of the rectangle
+            x (int) - must be >= 0
+            y (int) - must be >= 0
+        """
         self.width = width
         self.height = height
         self.x = x
@@ -150,11 +151,11 @@ class Rectangle(Base):
                     self.y = value
 
     def to_dictionary(self):
+        """returns the dictionary representation of a Rectangle"""
         return {
             "id": self.id,
             "width": self.width,
             "height": self.height,
             "x": self.x,
             "y": self.y
-
             }

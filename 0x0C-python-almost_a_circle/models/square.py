@@ -6,6 +6,7 @@ from models.base import Base
 
 class Square(Rectangle):
     """inherits from Rectangle"""
+
     def __init__(self, size, x=0, y=0, id=None):
         """
         initializing new square
@@ -82,6 +83,7 @@ class Square(Rectangle):
                     self.y = value
 
     def to_dictionary(self):
+        """returns the dictionary representation of a Square"""
         return {
             "id": self.id,
             "size": self.size,
